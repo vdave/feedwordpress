@@ -1836,6 +1836,11 @@ class FeedWordPress {
 	public function update_requested () {
 		return MyPHP::request('update_feedwordpress');
 	} /* FeedWordPress::update_requested() */
+
+	static public function update_requested_s () {
+		return MyPHP::request('update_feedwordpress');
+	} /* FeedWordPress::update_requested() */
+
 	
 	public function update_requested_url () {
 		$ret = null;
@@ -2310,12 +2315,12 @@ class FeedWordPress {
 			foreach ($output as $method) :
 				switch ($method) :
 				case 'echo' :
-					if (!FeedWordPress::update_requested()) :
+					if (!FeedWordPress::update_requested_s()) :
 						echo "<div><pre><strong>Diag".str_repeat('====', $diagnostic_nesting-1).'|</strong> '.$out."</pre></div>\n";
 					endif;
 					break;
 				case 'echo_in_cronjob' :
-					if (FeedWordPress::update_requested()) :
+					if (FeedWordPress::update_requested_s()) :
 						echo FeedWordPress::log_prefix()." ".$out."\n";
 					endif;
 					break;
