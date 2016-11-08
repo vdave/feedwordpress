@@ -16,7 +16,7 @@ define('FWP_CANCEL_BUTTON', '× Cancel');
 define('FWP_CHECK_FOR_UPDATES', 'Update');
 
 class FeedWordPressSyndicationPage extends FeedWordPressAdminPage {
-	function FeedWordPressSyndicationPage ($filename = NULL) {
+	function __construct ($filename = NULL) {
 		FeedWordPressAdminPage::FeedWordPressAdminPage('feedwordpresssyndication', /*link=*/ NULL);
 
 		// No over-arching form element
@@ -27,6 +27,10 @@ class FeedWordPressSyndicationPage extends FeedWordPressAdminPage {
 			$this->filename = $filename;
 		endif;
 	} /* FeedWordPressSyndicationPage constructor */
+
+	function FeedWordPressSyndicationPage ($filename = NULL) {
+		self::__construct($filename);
+	}
 
 	function has_link () { return false; }
 

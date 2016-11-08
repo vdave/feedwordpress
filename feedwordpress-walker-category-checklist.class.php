@@ -13,12 +13,17 @@ require_once(ABSPATH.'/wp-admin/includes/template.php');
 class FeedWordPress_Walker_Category_Checklist extends Walker_Category_Checklist {
 	var $prefix = ''; var $taxonomy = 'category';
 	var $checkbox_name = NULL;
-	function FeedWordPress_Walker_Category_Checklist ($params = array()) {
+
+	function __construct ($params = array()) {
 		$this->set_taxonomy('category');
 
 		if (isset($params['checkbox_name'])) :
 			$this->checkbox_name = $params['checkbox_name'];
 		endif;
+	}
+
+	function FeedWordPress_Walker_Category_Checklist ($params = array()) {
+		self::__construct($params);
 	}
 
 	function set_prefix ($prefix) {

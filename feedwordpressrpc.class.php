@@ -4,8 +4,12 @@
 ################################################################################
 
 class FeedWordPressRPC {
-	function FeedWordPressRPC () {
+	function __construct () {
 		add_filter('xmlrpc_methods', array($this, 'xmlrpc_methods'));
+	}
+
+	function FeedWordPressRPC () {
+		self::__construct();
 	}
 	
 	function xmlrpc_methods ($args = array()) {
