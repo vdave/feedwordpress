@@ -1,3 +1,5 @@
+Fork from: radgeek/feedwordpress
+
 === FeedWordPress ===
 Contributors: Charles Johnson
 Donate link: http://feedwordpress.radgeek.com/
