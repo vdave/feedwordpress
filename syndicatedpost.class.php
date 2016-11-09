@@ -46,8 +46,10 @@ class SyndicatedPost {
 	function __construct ($item, &$source) {
 		global $wpdb;
 
-		if ( empty($item) && empty($source) )
+		if ( empty($item) && empty($source) ){
+			error_log("SyndicatedPost: empty item")
 			return;
+		}
 
 		if (is_array($item)
 		and isset($item['simplepie'])
