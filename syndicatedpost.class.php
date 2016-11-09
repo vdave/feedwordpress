@@ -47,7 +47,7 @@ class SyndicatedPost {
 		global $wpdb;
 
 		if ( empty($item) && empty($source) ){
-			error_log("SyndicatedPost: empty item");
+			error_log("SyndicatedPost: empty item", 0);
 			return;
 		}
 
