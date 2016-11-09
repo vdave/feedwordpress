@@ -47,10 +47,10 @@ class SyndicatedPost {
 		global $wpdb;
 
 		if ( empty($item) && empty($source) ){
-			FeedWordPress::diagnostic('SyndicatedPost', 'empty item');
+			FeedWordPress::diagnostic('SyndicatedPost', '0. empty item');
 			return;
 		}
-
+		FeedWordPress::diagnostic('SyndicatedPost', '1. Item Content');
 		if (is_array($item)
 		and isset($item['simplepie'])
 		and isset($item['magpie'])) :
